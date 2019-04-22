@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2</title>
+</head>
+<body>
+    <h1 style="color:lawngreen">HELLO FROM TEMPLATE!!!</h1>
+    <form action="form-handler/" method="post">
+        {% csrf_token %}
+        <label style="color:orange">Login: </label>
+        <input type = "text"><br />
+        <label style="color:orange">Password: </label>
+        <input type = "password"><br />
+        <input type = "submit" value  = "SUBMIT!">
+    </form>
+</body>
+</html>
