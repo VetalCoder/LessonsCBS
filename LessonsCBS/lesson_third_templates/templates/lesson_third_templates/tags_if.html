@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tags IF</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        h1 {
+            font-size: 45px;
+            text-align: center;
+        }
+        h2 {   
+            text-decoration : underline;
+            color: darkblue;
+            text-align: center;
+        }
+        span {
+            font-style: italic;
+            color: saddlebrown;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tag IF</h1>
+    <h2>if/else</h2>
+    {% if user_ %}
+        <h4>Hello, {{user_}}!</h4>
+    {% endif %}
+    
+    {% if  list %}
+    <!--<span>List is empty!</span>-->
+        <p>{{list}}</p>
+    {% endif %}
+
+    {% if list or some_var %}
+        <span>There are some list or some_var.</span>
+    {% endif %}
+
+    <h2>Вложеный IF!</h2>
+    {% if list %}
+        {% if list|length != 2 %}
+            <p>{{list}}</p>
+        {% endif %}
+    {% endif %}
+
+    <h2>Операторы ==, !=, <, >, >=, <= ,in</h2>
+    <p>==</p>
+    {% if x == "x value" %}
+        <span>{{x}}</span>
+    {% endif %}
+
+    <hr />
+
+    <p>!=</p>
+    {% if x != "y value" %}
+        <span>x != "y value"</span>
+    {% endif %}
+    <hr />
+
+    <p><</p>
+    {% if value < 15 %}
+        <span> if value < 15 ->{{value}}</span>
+    {% endif %}
+    <hr />
+
+    <p> > </p>
+    {% if value > 5 %}
+        <span> if value > 5 ->{{value}}</span>
+    {% endif %}
+    <hr />
+
+    <p> >= , <= </p>
+    {% if value <= 10 %}
+        <span> if value <= 10 ->{{value}}</span>
+    {% endif %}
+    <hr />
+
+    <h2>ELIF!</h2>
+    {% if var1 %}
+        {{ var1 }}
+    {% elif var2 %}
+        {{ var2 }}
+    {% elif var3 %}
+        {{ var3 }}
+    {% else %}
+        EMPTY!
+    {% endif %}
+
+
+    <h2>Equvivalent firstof!</h2>
+    {% firstof var1 var2 var3 "EMPTY!" %}
+
+
+    <h2>IN!</h2>
+    {% if "name" in obj %}
+        {{obj.name}}
+    {% endif %}
+    <hr />
+
+    {% if "bc" in "abcdef" %}
+        Это предложение выводится, поскольку "bc" является подстрокой "abcdef"
+    {% endif %}
+    <hr />
+
+    {% if "bc" not in "adas" %}
+        Это предложение выводится, поскольку "bc"  не является подстрокой "adas"
+    {% endif %}
+    <hr />
+
+    {% if "hello" in greetings %}
+        Если greetings представляет собой список или множество, одним из
+        элементов которого является "hello", это предложение будет выведено.
+    {% endif %}
+    <hr />
+
+
+    Операторы сравнения нельзя записывать цепочкой, как в Python или в математической записи. Например, вместо записи:
+    <span> if a > b > c </span>
+    <br />
+    {% if a > b > c %}
+    (WRONG)
+    {% endif %}
+    <br />
+
+    следует писать:
+    <span> if a > b and b > c </span>
+    <br />
+    {% if a > b and b > c %}
+    100 > 10 > 1
+    {% endif %}
+    <br />
+</body>
+</html>

@@ -39,6 +39,22 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="lesson_third_templates\admin.py" />
+    <Compile Include="lesson_third_templates\apps.py" />
+    <Compile Include="lesson_third_templates\migrations\__init__.py" />
+    <Compile Include="lesson_third_templates\models.py" />
+    <Compile Include="lesson_third_templates\templatetags\poll_extras.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_third_templates\templatetags\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_third_templates\tests.py" />
+    <Compile Include="lesson_third_templates\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_third_templates\views.py" />
+    <Compile Include="lesson_third_templates\__init__.py" />
     <Compile Include="lesson_two_responses\admin.py" />
     <Compile Include="lesson_two_responses\apps.py" />
     <Compile Include="lesson_two_responses\migrations\__init__.py" />
@@ -84,6 +100,14 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="LessonsCBS\" />
+    <Folder Include="lesson_third_templates\" />
+    <Folder Include="lesson_third_templates\migrations\" />
+    <Folder Include="lesson_third_templates\static\" />
+    <Folder Include="lesson_third_templates\static\styles\" />
+    <Folder Include="lesson_third_templates\templates\lesson_third_templates\inheritanse\" />
+    <Folder Include="lesson_third_templates\templatetags\" />
+    <Folder Include="lesson_third_templates\templates\" />
+    <Folder Include="lesson_third_templates\templates\lesson_third_templates\" />
     <Folder Include="lesson_two_responses\" />
     <Folder Include="lesson_two_responses\migrations\" />
     <Folder Include="lesson_two_responses\templates\" />
@@ -98,6 +122,16 @@
     <Folder Include="lesson_two_routes_part2\templates\lesson_two_routes_part2\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lesson_third_templates\static\styles\style.css" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\filters.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\index.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\inheritanse\adrian.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\inheritanse\aside.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\inheritanse\base.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\inheritanse\releases.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\tags_for.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\tags_if.html" />
+    <Content Include="lesson_third_templates\templates\lesson_third_templates\tags_regroup.html" />
     <Content Include="lesson_two_responses\templates\lesson_two_responses\index.html" />
     <Content Include="lesson_two_routes\templates\lesson_two_routes\index.html" />
     <Content Include="lesson_two_routes_part2\templates\lesson_two_routes_part2\index.html" />

@@ -1,0 +1,16 @@
+{% extends "lesson_third_templates/inheritanse/base.html" %}
+
+{% block title %} Релизы джанго !{% endblock %}
+{% block content %}
+    <h1>
+        Релизы Django
+    </h1>
+    <ul id="releases">
+        {% for elem in obj %}
+            <li> 
+                Год :   {{ elem.year }}, 
+                Версия : {{ elem.version }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

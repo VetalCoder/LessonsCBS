@@ -1,0 +1,44 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Домашняя страница{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css'%}">
+</head>
+<body>
+    <header>
+        <img  height="200" src="http://rtfm.co.ua/wp-content/uploads/2014/11/django_logo_1.png" alt="">
+        <nav>
+            <a href="/lesson-third/base">Домашняя страница</a>
+            <a href="/lesson-third/adrian">Адриан Головатый</a>
+            <a href="/lesson-third/releases">Релизы джанго</a>
+        </nav>
+    </header>
+
+    {% include 'lesson_third_templates/inheritanse/aside.html' %}
+
+    {% block content %}
+    <section class="base">
+        <h1>Домашняя страница! </h1>
+        <div>
+            Убедиться во всех преимуществах Django и Python можно лишь на деле.
+            Чтобы использовать подобные технологии, необходимо убедиться в том, что ваш веб-ресурс
+            отвечает определенным требованиям. К примеру, для установки «джанго» надо, чтобы хостинг имел UNIX-подобную систему.
+            Чтобы Django нормально функционировал, необходимо обеспечить доступ к одному из веб-серверов: Ngix, Apache или Lighttpd.
+            Не стоит забывать и о том, что хостинг для «джанго» обязательно должен иметь возможность для запуска скриптов.
+            Для этой цели обычно используется планировщик задач Cron.
+            Если у вас нет времени на поиски подходящего хостинг-провайдера в вашем городе,
+            но при этом хотите получить весь спектр услуг, то можете ввести в поисковой системе соответствующий запрос.
+        </div>
+    </section>
+    {% endblock %}
+
+    <footer>
+        <div>
+            Contacts: +380 63 123 45 67
+        </div>    
+    </footer>
+
+</body>
+</html>
