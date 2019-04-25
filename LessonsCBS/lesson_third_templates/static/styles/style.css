@@ -1,19 +1,19 @@
-body{
+body {
     margin: 0px;
     padding: 0px;
-    background-color: lightblue;
+    background-color: whitesmoke;
 }
 
 header {
-    background: radial-gradient(ellipse at center, rgba(147,206,222,1) 0%, rgba(126,135,4,1) 41%, rgba(73,189,133,1) 100%);
+    background-color: #5CCCCC;
     height: 220px;
 }
 
-header img {
-    margin: 10px;
-    float: left;
-    border-radius: 200px;
-}
+    header img {
+        margin: 10px;
+        float: left;
+        border-radius: 200px;
+    }
 
 h1 {
     letter-spacing: 3px;
@@ -22,11 +22,17 @@ h1 {
 }
 
 nav a {
+    display: block;
+    text-align: center;
     text-decoration: none;
     color: white;
     font-size: 28px;
     margin-right: 60px;
 }
+
+    nav a:hover {
+        color: green;
+    }
 
 nav {
     padding-top: 80px;
@@ -34,7 +40,7 @@ nav {
 
 aside {
     display: block;
-    background-color: lightskyblue;
+    background-color: antiquewhite;
     padding: 10px;
     width: 200px;
     float: right;
@@ -45,23 +51,23 @@ ul li {
 }
 
 footer {
-    height: 20vh;
+    height: 60px;
     float: left;
-    background: linear-gradient(45deg, rgba(183,222,237,1) 0%, rgba(113,206,239,1) 29%, rgba(33,180,226,1) 48%, rgba(183,222,237,1) 100%);
+    background: #006363;
     width: 100%;
 }
 
-footer div{
-    padding-top: 40px;
-    text-align: center; 
-    color: darkblue;
+footer div {
+    padding-top: 7px;
+    text-align: center;
+    color: #33CCCC;
     font-size: 40px;
     font-weight: bold;
     font-style: initial;
 }
 
 div {
-    width:80%;
+    width: 80%;
     margin-left: 30px;
     padding-right: 20px;
     font-size: 24px;
@@ -77,11 +83,11 @@ div {
     width: 300px;
 }
 
-#releases{
+#releases {
     list-style: none;
 }
 
-#releases li {
-    font-style: italic;
-    font-size: 24px;
-}
+    #releases li {
+        font-style: italic;
+        font-size: 24px;
+    }
