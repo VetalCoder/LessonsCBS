@@ -9,11 +9,12 @@ header {
     height: 220px;
 }
 
-    header img {
-        margin: 10px;
-        float: left;
-        border-radius: 200px;
-    }
+header img {
+    margin: 10px;
+    margin-left: 100px;
+    float: left;
+    border-radius: 200px;
+}
 
 h1 {
     letter-spacing: 3px;
@@ -30,9 +31,9 @@ nav a {
     margin-right: 60px;
 }
 
-    nav a:hover {
-        color: green;
-    }
+nav a:hover {
+    color: green;
+}
 
 nav {
     padding-top: 80px;
