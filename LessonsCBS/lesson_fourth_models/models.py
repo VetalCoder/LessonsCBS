@@ -44,7 +44,7 @@ class Author(models.Model):
     date_birth  = models.DateField(auto_now=False , verbose_name = "Дата рождения")
 
     def __str__(self):
-        return "Имя : %s Фамилия : %s" %(self.name, self.surname)
+        return "Имя : %s, Фамилия : %s" %(self.name, self.surname)
 
     class Meta:
         verbose_name = "Автор"
@@ -58,10 +58,17 @@ class Book(models.Model):
         ('drama' , "Drama"),
     )
 
-    author  = models.ForeignKey(Author , on_delete=models.CASCADE)
-    title   = models.CharField(max_length=50)
-    text    = models.TextField(max_length=1000)
-    genre   = models.CharField(max_length=50 ,choices=CHOISE_GENRE)
+    STATUS_CHOICES = (
+        ('d', 'Draft'),
+        ('p', 'Published'),
+        ('w', 'Withdrawn'),
+    )
+
+    author = models.ForeignKey(Author , on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    text = models.TextField(max_length=1000)
+    genre = models.CharField(max_length=50, choices=CHOISE_GENRE)
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default="d")
 
     def __str__(self):
         return self.title

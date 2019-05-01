@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML Forms</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        button {
+            border-radius: 10px;
+            background-color: darkgrey;
+            font-size: 22px;
+            color: saddlebrown;
+        }
+        h2 {
+            font-size: 45px;
+            text-align: center;
+        }
+        input {
+            border: 1px solid saddlebrown;
+            border-radius: 10px;
+            background-color: darkgrey;
+            font-size: 22px;
+            color: saddlebrown;
+            margin: 5px;
+        }
+        span {
+            font-size: 22px;
+
+        }
+    </style>
+</head>
+<body>
+    <h2>Form, which send GET-method</h2>
+    <form action="/lesson-fifth/search/" method="get">
+        <input placeholder=" Input text here..." type="text" name="search-word">
+        <button type="submit">Search</button>
+    </form>
+
+    <hr />
+    <h2>Form, which send POST-method</h2>
+    <form action="/lesson-fifth/file-input/" method = "post">
+        {% csrf_token %}
+        <span>Ваше имя:</span>
+        <input type="text" name  = "name"> <br>
+        <span>Ваше фамилия:</span>
+        <input type="text" name  = "surname"><br>
+        <span>Ваше дата рождения: </span>
+        <input type="text" name  = 'birth'><br>
+        <span>Ваш пол:</span><br>         
+        <input type="radio" name  = 'gender' value = "male"><span>Мужчина</span><br>
+        <input type="radio" name  = 'gender' value = "female"><span>Женщина</span><br>
+        <button type="submit">Записать в файл</button>
+    </form>
+</body>
+</html>

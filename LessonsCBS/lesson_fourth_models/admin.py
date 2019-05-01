@@ -3,8 +3,7 @@ from . import models
 
 # Register your models here.
 
-# admin.site.register(models.Example)
-
+admin.site.register(models.Example)
 admin.site.register(models.Book)
 admin.site.register(models.Place)
 admin.site.register(models.Restaurant)
@@ -13,11 +12,15 @@ admin.site.register(models.Publication)
 admin.site.register(models.Article)
 
 
-class ExampleAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
+####### for slug-field
+#class ExampleAdmin(admin.ModelAdmin):
+#    prepopulated_fields = {"slug": ("title",)}
 
-admin.site.register(models.Example, ExampleAdmin)
+#admin.site.register(models.Example, ExampleAdmin)
 
+
+
+####### Inline Book
 
 #class BookInline(admin.TabularInline):
 #    model = models.Book
@@ -41,6 +44,9 @@ class AuthorAdmin(admin.ModelAdmin):
 admin.site.register(models.Author, AuthorAdmin)
 
 
+
+######## Inline ManyToMany
+
 #class PublicInline(admin.TabularInline):
 #    model = models.Article.publications.through
 
@@ -57,3 +63,24 @@ admin.site.register(models.Author, AuthorAdmin)
 
 #admin.site.register(models.Publication, PublicationAdmin)
 #admin.site.register(models.Article, ArticleAdmin)
+
+
+
+# Adding actions (to Book for example)
+# docs: https://docs.djangoproject.com/en/2.2/ref/contrib/admin/actions/#writing-actions
+
+#class BookAdmin(admin.ModelAdmin):
+#    list_display = ['title', 'status']
+#    ordering = ['title']
+#    actions = ['make_published']
+
+#    def make_published(self, request, queryset):
+#        rows_updated = queryset.update(status='p')
+#        if rows_updated == 1:
+#            message_bit = "1 story was"
+#        else:
+#            message_bit = "%s stories were" % rows_updated
+#        self.message_user(request, "%s successfully marked as published." % message_bit)
+#    make_published.short_description = "Mark selected stories as published"
+
+#admin.site.register(models.Book, BookAdmin)

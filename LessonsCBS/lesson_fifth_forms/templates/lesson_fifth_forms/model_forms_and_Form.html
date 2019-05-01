@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Form and ModelForm{% endblock %}</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        h1 {
+            font-size: 45px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 30px;
+            color: green;
+        }
+        input, select, textarea{
+            border: 1px solid saddlebrown;
+            border-radius: 10px;
+            background-color: darkgrey;
+            font-size: 22px;
+            color: saddlebrown;
+            margin: 5px;
+        }
+        .errorlist {
+            list-style: none;
+        }
+        ul.errorlist li {
+            color: red;
+            font-size: 22px;
+            font-style: italic;
+            margin-left: 50px;
+        }
+        .label {
+            margin: 5px;
+            margin-left: 50px;
+            font-size: 22px;
+            font-style: italic;
+            float: left;
+        }
+        .item {
+            margin-left: 500px;
+        }
+        #butt {
+            margin-left: 500px;
+        }
+    </style>
+</head>
+<body>
+    {% block form %}
+        <h1>Формы, основанные на модели</h1>
+        <h2>Добавить автора (by default):</h2>
+
+        <form  action="add-author/"  method="post" >
+            {% csrf_token %}
+            {{ form_for_author1 }}
+            <input  type="submit"  value="Submit"  />
+        </form>
+        <hr>
+
+        <h2>Добавить статью (as_p):</h2>
+        <form  action="add-article/"  method="post" >
+            {% csrf_token %}
+            {{ form_for_article.as_p }}
+            <input type="submit" value="Submit" />
+        </form >
+        <hr>
+
+        <h1>Форма на основе класса Form</h1>
+        <h2>Контактная форма:</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form_contact.as_p}}
+            <input type="submit" value="Submit"  />
+        </form>
+        <hr>
+
+        <h2>Контактная форма (та же форма...)</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for item in form_contact %}
+                <div class="label">{{ item.label }}</div>
+                <div class="item">{{ item }}</div>
+                {% if item.errors %}
+                    <div>{{ item.errors }}</div>
+                {% endif %}
+            {% endfor %}
+
+            <input id="butt" type="submit" value="Submit"  />
+        </form>
+
+    {% endblock %}
+</body>
+</html>
