@@ -1,1 +1,7 @@
-django >= 2.1.6, < 3.0 
+Django==2.2
+Pillow==6.0.0
+Pillow-PIL==0.1.dev0
+pip==18.1
+pytz==2019.1
+setuptools==40.6.2
+sqlparse==0.3.0

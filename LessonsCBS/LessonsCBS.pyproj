@@ -39,6 +39,13 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="lesson_fourth_models\admin.py" />
+    <Compile Include="lesson_fourth_models\apps.py" />
+    <Compile Include="lesson_fourth_models\migrations\__init__.py" />
+    <Compile Include="lesson_fourth_models\models.py" />
+    <Compile Include="lesson_fourth_models\tests.py" />
+    <Compile Include="lesson_fourth_models\views.py" />
+    <Compile Include="lesson_fourth_models\__init__.py" />
     <Compile Include="lesson_third_templates\admin.py" />
     <Compile Include="lesson_third_templates\apps.py" />
     <Compile Include="lesson_third_templates\migrations\__init__.py" />
@@ -100,6 +107,10 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="LessonsCBS\" />
+    <Folder Include="lesson_fourth_models\" />
+    <Folder Include="lesson_fourth_models\migrations\" />
+    <Folder Include="lesson_fourth_models\templates\" />
+    <Folder Include="lesson_fourth_models\templates\lesson_fourth_models\" />
     <Folder Include="lesson_third_templates\" />
     <Folder Include="lesson_third_templates\migrations\" />
     <Folder Include="lesson_third_templates\static\" />
@@ -122,6 +133,7 @@
     <Folder Include="lesson_two_routes_part2\templates\lesson_two_routes_part2\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lesson_fourth_models\templates\lesson_fourth_models\index.html" />
     <Content Include="lesson_third_templates\static\styles\style.css" />
     <Content Include="lesson_third_templates\templates\lesson_third_templates\filters.html" />
     <Content Include="lesson_third_templates\templates\lesson_third_templates\index.html" />
