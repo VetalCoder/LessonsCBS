@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <style>
+        body {
+            background-color:lightgray;
+        }
+        h1 {
+            font-size:45px;
+            text-align:center;
+        }
+        h2 {
+            font-size:30px;
+            color:green;
+        }
+        form {
+            margin: auto;
+            width:300px;
+            padding:25px;
+            font-size:25px;
+            border:1px solid black;
+            border-radius:20px;
+            margin-top:100px;
+            text-align:center;
+        }
+        input, button{
+            border:1px solid saddlebrown;
+            border-radius:10px;
+            background-color:darkgrey;
+            font-size:22px;
+            color:saddlebrown;
+            margin:5px;
+            padding: 0px 5px;
+        }
+        label{
+            color:saddlebrown;
+            margin:5px;
+            margin-left:50px;
+            font-size:22px;
+            font-style:italic;
+            float:left;
+        }
+        button {
+            transition: color 1s, background 1s, border 1s;
+            padding: 10px 25px;
+        }
+        button:hover {
+            color: darkgrey;
+            background: saddlebrown;
+            border: 1px solid black;
+            transition: color 1s, background 1s, border 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+        {% for field in form %}
+            <label>{{field.label}}:</label>
+            <p>{{field}}</p>
+            {% if field.errors %}
+                <p>{{field.errors}}</p>
+            {% endif %}
+        {% endfor %}
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

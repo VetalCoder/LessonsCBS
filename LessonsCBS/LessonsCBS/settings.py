@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'lesson_fourth_models',
     'lesson_fifth_forms',
     'lesson_sixth_ORM',
+    'lesson_seventh_registration',
 ]
 
 # Middleware framework

@@ -59,6 +59,19 @@
     <Compile Include="lesson_fourth_models\tests.py" />
     <Compile Include="lesson_fourth_models\views.py" />
     <Compile Include="lesson_fourth_models\__init__.py" />
+    <Compile Include="lesson_seventh_registration\admin.py" />
+    <Compile Include="lesson_seventh_registration\apps.py" />
+    <Compile Include="lesson_seventh_registration\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_seventh_registration\migrations\__init__.py" />
+    <Compile Include="lesson_seventh_registration\models.py" />
+    <Compile Include="lesson_seventh_registration\tests.py" />
+    <Compile Include="lesson_seventh_registration\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_seventh_registration\views.py" />
+    <Compile Include="lesson_seventh_registration\__init__.py" />
     <Compile Include="lesson_sixth_ORM\admin.py" />
     <Compile Include="lesson_sixth_ORM\apps.py" />
     <Compile Include="lesson_sixth_ORM\migrations\__init__.py" />
@@ -138,6 +151,10 @@
     <Folder Include="lesson_fourth_models\migrations\" />
     <Folder Include="lesson_fourth_models\templates\" />
     <Folder Include="lesson_fourth_models\templates\lesson_fourth_models\" />
+    <Folder Include="lesson_seventh_registration\" />
+    <Folder Include="lesson_seventh_registration\migrations\" />
+    <Folder Include="lesson_seventh_registration\templates\" />
+    <Folder Include="lesson_seventh_registration\templates\lesson_seventh_registration\" />
     <Folder Include="lesson_sixth_ORM\" />
     <Folder Include="lesson_sixth_ORM\migrations\" />
     <Folder Include="lesson_sixth_ORM\templates\" />
@@ -168,6 +185,10 @@
     <Content Include="lesson_fifth_forms\templates\lesson_fifth_forms\model_forms_and_Form.html" />
     <Content Include="lesson_fifth_forms\templates\lesson_fifth_forms\url_form_validate.html" />
     <Content Include="lesson_fourth_models\templates\lesson_fourth_models\index.html" />
+    <Content Include="lesson_seventh_registration\templates\lesson_seventh_registration\login.html" />
+    <Content Include="lesson_seventh_registration\templates\lesson_seventh_registration\main_page.html" />
+    <Content Include="lesson_seventh_registration\templates\lesson_seventh_registration\registration.html" />
+    <Content Include="lesson_seventh_registration\templates\lesson_seventh_registration\registration_advansed.html" />
     <Content Include="lesson_sixth_ORM\templates\lesson_sixth_ORM\index.html" />
     <Content Include="lesson_sixth_ORM\templates\lesson_sixth_ORM\result_search.html" />
     <Content Include="lesson_third_templates\static\styles\style.css" />

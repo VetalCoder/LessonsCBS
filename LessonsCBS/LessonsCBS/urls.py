@@ -35,5 +35,5 @@ urlpatterns = [
     path("lesson-third/", include('lesson_third_templates.urls')),
     path("lesson-fifth/", include('lesson_fifth_forms.urls')),
     path("lesson-sixth/", include('lesson_sixth_ORM.urls')),
-
+    path("lesson-seventh/", include('lesson_seventh_registration.urls')),
 ]
