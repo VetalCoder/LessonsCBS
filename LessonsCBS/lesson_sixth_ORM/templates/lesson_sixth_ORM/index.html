@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django ORM</title>
+    <style>
+        body {
+            background-color:lightgray;
+        }
+        h1 {
+            font-size:45px;
+            text-align:center;
+        }
+        h2 {
+            font-size:30px;
+            color:green;
+        }
+        input, button{
+            border:1px solid saddlebrown;
+            border-radius:10px;
+            background-color:darkgrey;
+            font-size:22px;
+            color:saddlebrown;
+            margin:5px;
+        }
+        label{
+            margin:5px;
+            margin-left:50px;
+            font-size:22px;
+            font-style:italic;
+            float:left;
+        }
+        table, td {
+            border-radius:5px;
+        }
+        table {
+            background-color:darkgrey;
+        }
+        span {
+            color:saddlebrown;
+        }
+        p {
+            margin-left:50px;
+            font-size:22px;
+            font-style:italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Django ORM</h1>
+    {% block content %}
+        <h2>Workers (all_humans):</h2>    
+        <table border='1' cellpadding="5">
+            <tr style='background:blue; color:white;'>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+            {% for human in all_humans %}
+            <tr style="background-color:lightgrey">
+                <td>{{human.id}}</td>
+                <td>{{human.name}}</td>
+                <td>{{human.surname}}</td>
+                <td>{{human.birth}}</td>
+                <td>{{human.company}}</td>
+                <td>{{human.position}}</td>
+                <td>{{human.language}}</td>
+                <td>{{human.salary}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr />
+
+        <h2>Working in Google (workers_google):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:red; color:white;'>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+            {% for human in workers_google %}
+            <tr style="background-color:lightgrey">
+                <td>{{human.name}}</td>
+                <td>{{human.surname}}</td>
+                <td>{{human.birth}}</td>
+                <td>{{human.company}}</td>
+                <td>{{human.position}}</td>
+                <td>{{human.language}}</td>
+                <td>{{human.salary}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr />
+
+        <h2>First worker (one_worker):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:yellow; color:black;'>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+            <tr style="background-color:lightgrey">
+                <td>{{one_worker.name}}</td>
+                <td>{{one_worker.surname}}</td>
+                <td>{{one_worker.birth}}</td>
+                <td>{{one_worker.company}}</td>
+                <td>{{one_worker.position}}</td>
+                <td>{{one_worker.language}}</td>
+                <td>{{one_worker.salary}}</td>
+            </tr>
+        </table>
+        <hr />
+
+        <h2>Workers, who born in 1976 (filtered):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:white; color:black;'>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+        {% for elem in filtered %}
+            <tr style="background-color:lightgrey">
+                <td>{{elem.name}}</td>
+                <td>{{elem.surname}}</td>
+                <td>{{elem.birth}}</td>
+                <td>{{elem.company}}</td>
+                <td>{{elem.position}}</td>
+                <td>{{elem.language}}</td>
+                <td>{{elem.salary}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <hr />
+
+        <h2>First two workers (first_two):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:green; color:black;'>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+        {% for elem in first_two %}
+            <tr style="background-color:lightgrey">
+                <td>{{elem.id}}</td>
+                <td>{{elem.name}}</td>
+                <td>{{elem.surname}}</td>
+                <td>{{elem.birth}}</td>
+                <td>{{elem.company}}</td>
+                <td>{{elem.position}}</td>
+                <td>{{elem.language}}</td>
+                <td>{{elem.salary}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <hr />
+
+        <h2>Ordering by birth without params (ordered):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:green; color:black;'>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+        {% for elem in ordered %}
+            <tr style="background-color:lightgrey">
+                <td>{{elem.id}}</td>
+                <td>{{elem.name}}</td>
+                <td>{{elem.surname}}</td>
+                <td>{{elem.birth}}</td>
+                <td>{{elem.company}}</td>
+                <td>{{elem.position}}</td>
+                <td>{{elem.language}}</td>
+                <td>{{elem.salary}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <hr />
+
+        <h2>Ordering by birth (sorted):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:green; color:black;'>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+        {% for elem in sorted %}
+            <tr style="background-color:lightgrey">
+                <td>{{elem.id}}</td>
+                <td>{{elem.name}}</td>
+                <td>{{elem.surname}}</td>
+                <td>{{elem.birth}}</td>
+                <td>{{elem.company}}</td>
+                <td>{{elem.position}}</td>
+                <td>{{elem.language}}</td>
+                <td>{{elem.salary}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <hr />
+
+        <h2>Sorting by salary (sorted_salary):</h2>
+        <table border='1' cellpadding="5">
+            <tr style='background:pink; color:black;'>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+               </tr>
+        {% for elem in sorted_salary %}
+            <tr style="background-color:lightgrey">
+                <td>{{elem.id}}</td>
+                <td>{{elem.name}}</td>
+                <td>{{elem.surname}}</td>
+                <td>{{elem.birth}}</td>
+                <td>{{elem.company}}</td>
+                <td>{{elem.position}}</td>
+                <td>{{elem.language}}</td>
+                <td>{{elem.salary}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        <hr />
+
+        <h2>Василий и Ваня (name_vasya):</h2>
+        {% for elem in name_vasya%}
+            <p>Name: <span>{{elem.name}}</span>, Surname: <span>{{elem.surname}}</span>, Position: <span>{{elem.position}}</span>.</p>
+        {% endfor %}
+        <hr>
+
+        <h2>Search form:</h2>
+        <form action="" method='post'>
+            {% csrf_token %}
+            <label>Enter the company:</label>
+            <input name='search' type="text">
+            <button type="submit">Find</button>
+        </form>
+    {% endblock %}
+</body>
+</html>

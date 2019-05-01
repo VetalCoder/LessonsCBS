@@ -34,5 +34,6 @@ urlpatterns = [
     path("lesson-two-responses/", include('lesson_two_responses.urls', namespace='lesson_two_responses')),
     path("lesson-third/", include('lesson_third_templates.urls')),
     path("lesson-fifth/", include('lesson_fifth_forms.urls')),
+    path("lesson-sixth/", include('lesson_sixth_ORM.urls')),
 
 ]

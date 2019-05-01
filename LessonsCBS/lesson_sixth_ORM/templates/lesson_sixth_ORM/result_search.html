@@ -1,0 +1,39 @@
+﻿{% extends 'lesson_sixth_ORM/index.html' %}
+
+{% block content %}
+    <h2>Search form:</h2>
+    <form action="" method='post'>
+        {% csrf_token %}
+        <label>Enter the company:</label>
+        <input name='search' type="text">
+        <button type="submit">Find</button>
+    </form>
+
+    <h2>Results searching by "{{query}}":</h2>
+    {% if empty %}
+        <p style=' font-size:32px; color:red;'>{{empty}}</p>
+    {% else %}
+        <table border='1' cellpadding="5">
+            <tr style='background:yellow; color:black;'>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+            </tr>
+            {% for elem in result_list %}
+                <tr style="background-color:lightgrey">
+                    <td>{{elem.name}}</td>
+                    <td>{{elem.surname}}</td>
+                    <td>{{elem.birth}}</td>
+                    <td>{{elem.company}}</td>
+                    <td>{{elem.position}}</td>
+                    <td>{{elem.language}}</td>
+                    <td>{{elem.salary}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}
