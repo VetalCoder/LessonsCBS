@@ -1,0 +1,118 @@
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+}
+
+h2 {
+    clear: both;
+    margin-top: 20px;
+    padding-top: 20px;
+    margin-left: 50px;
+    font-size: 30px;
+    color: green;
+}
+
+a {
+    display: block;
+    color: black;
+    border-radius: 15px;
+    border: 1px solid black;
+    text-decoration: none;
+    font-size: 20px;
+    font-style: italic;
+    color: saddlebrown;
+    transition: color 1s, background 1s, border 1s;
+}
+
+    a:hover {
+        color: darkgrey;
+        background: saddlebrown;
+        border: 1px solid black;
+        transition: color 1s, background 1s, border 1s;
+    }
+
+.controls {
+    float: right;
+    margin-right: 50px;
+    padding: 10px 50px;
+}
+
+.show_link {
+    float: left;
+    padding: 10px 50px;
+    margin: 20px 0px 0px 75px;
+}
+
+table, td {
+    border-radius: 5px;
+}
+
+table {
+    margin-left: 75px;
+    padding: 3px;
+}
+
+tr {
+    background-color: darkgrey;
+}
+
+form {
+    margin: auto;
+    width: 300px;
+    padding: 25px;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+input, button, select {
+    border: 1px solid saddlebrown;
+    border-radius: 10px;
+    background-color: darkgrey;
+    font-size: 22px;
+    color: saddlebrown;
+    margin: 5px;
+    padding: 0px 5px;
+}
+
+label {
+    color: saddlebrown;
+    margin: 5px;
+    margin-left: 25px;
+    font-size: 22px;
+    font-style: italic;
+    float: left;
+}
+
+button {
+    transition: color 1s, background 1s, border 1s;
+    padding: 10px 25px;
+}
+
+    button:hover {
+        color: darkgrey;
+        background: saddlebrown;
+        border: 1px solid black;
+        transition: color 1s, background 1s, border 1s;
+    }
+
+select {
+    float: right;
+    margin-right: 10px;
+}
+
+.reg, .login {
+    margin-top: 110px;
+}
+
+#error-mail {
+    font-size: 15px;
+    color: chocolate;
+    margin-bottom: 10px;
+}

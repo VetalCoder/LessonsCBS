@@ -39,6 +39,19 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="lesson_eight_ajax\admin.py" />
+    <Compile Include="lesson_eight_ajax\apps.py" />
+    <Compile Include="lesson_eight_ajax\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_eight_ajax\migrations\__init__.py" />
+    <Compile Include="lesson_eight_ajax\models.py" />
+    <Compile Include="lesson_eight_ajax\tests.py" />
+    <Compile Include="lesson_eight_ajax\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="lesson_eight_ajax\views.py" />
+    <Compile Include="lesson_eight_ajax\__init__.py" />
     <Compile Include="lesson_fifth_forms\admin.py" />
     <Compile Include="lesson_fifth_forms\apps.py" />
     <Compile Include="lesson_fifth_forms\forms.py">
@@ -143,6 +156,14 @@
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
     <Folder Include="LessonsCBS\" />
+    <Folder Include="lesson_eight_ajax\" />
+    <Folder Include="lesson_eight_ajax\migrations\" />
+    <Folder Include="lesson_eight_ajax\static\" />
+    <Folder Include="lesson_eight_ajax\static\lesson_eight_ajax\" />
+    <Folder Include="lesson_eight_ajax\static\lesson_eight_ajax\css\" />
+    <Folder Include="lesson_eight_ajax\static\lesson_eight_ajax\js\" />
+    <Folder Include="lesson_eight_ajax\templates\" />
+    <Folder Include="lesson_eight_ajax\templates\lesson_eight_ajax\" />
     <Folder Include="lesson_fifth_forms\" />
     <Folder Include="lesson_fifth_forms\migrations\" />
     <Folder Include="lesson_fifth_forms\templates\" />
@@ -181,6 +202,11 @@
     <Folder Include="lesson_two_routes_part2\templates\lesson_two_routes_part2\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lesson_eight_ajax\static\lesson_eight_ajax\css\style.css" />
+    <Content Include="lesson_eight_ajax\static\lesson_eight_ajax\js\javascript.js" />
+    <Content Include="lesson_eight_ajax\templates\lesson_eight_ajax\ajax.html" />
+    <Content Include="lesson_eight_ajax\templates\lesson_eight_ajax\login.html" />
+    <Content Include="lesson_eight_ajax\templates\lesson_eight_ajax\registration.html" />
     <Content Include="lesson_fifth_forms\templates\lesson_fifth_forms\html_form.html" />
     <Content Include="lesson_fifth_forms\templates\lesson_fifth_forms\model_forms_and_Form.html" />
     <Content Include="lesson_fifth_forms\templates\lesson_fifth_forms\url_form_validate.html" />

@@ -1,0 +1,19 @@
+﻿{% extends 'lesson_eight_ajax/ajax.html' %}
+
+{% block login %}
+    <form class="reg" action="{% url 'lesson_eight_ajax:registration' %}" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="form-group">
+                <label for="">{{field.label}}</label>
+                <div>{{field}}</div>
+                {% if field.errors %}
+                    <p>{{field.errors}}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <p id='error-mail'></p>
+        <button id='btn' type="submit">Registration</button>
+    </form>
+{% endblock %}

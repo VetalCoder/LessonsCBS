@@ -50,6 +50,7 @@ class Human(models.Model):
     # to dictionary (lesson 8)
     def dict(self):
         obj = {
+            'id': self.id,
             'name': self.name,
             'surname': self.surname,
             'birth': self.birth,

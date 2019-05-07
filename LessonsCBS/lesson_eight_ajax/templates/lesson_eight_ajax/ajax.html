@@ -1,0 +1,66 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 8. AJAX</title>
+    <link rel="stylesheet" href="{% static 'lesson_eight_ajax/css/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>    
+    <script src="{% static 'lesson_eight_ajax/js/javascript.js' %}"></script>
+</head>
+<body>
+    <h1>Hello AJAX!</h1>
+    {% if user.is_authenticated  %}
+        <a class="controls" href="{% url 'lesson_eight_ajax:logout' %}">Exit ({{user.username}})</a>
+    {% else %}
+        <a class="controls" href="{% url 'lesson_eight_ajax:registration' %}">Registration</a>
+        <a class="controls" href="{% url 'lesson_eight_ajax:login' %}">Login</a>
+    {% endif %}
+
+    <div class="block-login">{% block login%}{% endblock %}</div>
+
+    {% if user.is_authenticated %}
+        <h2>Humans List</h2>
+        <table id='table_id' border='1' cellpadding=5>
+            <tr style='background-color:blue; color:white;'>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Birth</td>
+                <td>Company</td>
+                <td>Position</td>
+                <td>Programming language</td>
+                <td>Salary</td>
+            </tr>
+            {% for elem in humans %}
+                <tr>
+                    <td>{{elem.id}}</td>
+                    <td>{{elem.name}}</td>
+                    <td>{{elem.surname}}</td>
+                    <td>{{elem.birth}}</td>
+                    <td>{{elem.company}}</td>
+                    <td>{{elem.position}}</td>
+                    <td>{{elem.language}}</td>
+                    <td>{{elem.salary}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <a class="show_link" href='{% url 'lesson_eight_ajax:show_three' %}' id='show-three'>Show first three</a>
+        <a class="show_link" href='{% url 'lesson_eight_ajax:show_four' %}' id='show-four'>Show firsh four</a>
+
+        <h2>Add humans form</h2>
+        <form id='add-human' action="add-human/" method='post'>
+            {% csrf_token %}
+            {% for field in human_form %}
+            <label for="">{{field.label}}</label>
+            <div>{{field}}</div>
+            {% endfor %}
+            <button type='submit'>Add in table</button>
+        </form>
+
+    {% endif %}
+
+</body>
+</html>
