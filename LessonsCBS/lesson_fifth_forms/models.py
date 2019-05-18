@@ -2,6 +2,12 @@ from django.db import models
 
 # Create your models here.
 
+class Cities(models.Model):
+    towns = models.CharField(max_length=200, blank=False, verbose_name="Город", help_text="Выберите городa со списка")
+
+    def __str__(self):
+        return f"Город -- {self.towns}"
+
 class Author1(models.Model):
 
     CHOICES_FOR_CITY= (
@@ -13,7 +19,9 @@ class Author1(models.Model):
 
     name = models.CharField(max_length=200, verbose_name="Имя автора")
     surname = models.CharField(max_length=200, verbose_name="Фамилия автора")
-    city = models.CharField(choices=CHOICES_FOR_CITY, max_length=200, blank=False, verbose_name="Город", help_text="Выберите город со списка")
+    city = models.ManyToManyField(Cities)
+
+
 
     def __str__(self):
         return f'Автор -- {self.name} {self.surname}'

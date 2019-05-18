@@ -7,6 +7,10 @@ class AuthorOneForm(forms.ModelForm):
     class Meta:
         model = models.Author1
         fields = ['name', 'surname', 'city']
+        #widgets = {
+        #    'city' : forms.SelectMultiple()
+        #    #'name': Textarea(attrs={'cols': 80, 'rows': 20}),
+        #}
 
 
 class ArticleForm(forms.ModelForm):
@@ -16,6 +20,26 @@ class ArticleForm(forms.ModelForm):
 
 # form, basis on class Form
 class ContactForm(forms.Form):
+    LANGUAGE_CHOICES = (
+        ('python', 'Python'),
+        ('javascript', 'Javascript'),
+        ('c#', 'C#'),
+        ('cpp', 'C++'),
+        ('scala', 'Scala'),
+        ('lisp', 'Lisp'),
+        ('java', 'Java'),
+        ('lua', 'Lua'),
+        ('typescript', 'Typescript'),
+        ('go', 'Go'),
+        ('prolog', 'Prolog'),
+        ('swift', 'Swift'),
+        ('ada', 'Ada'),
+        ('coffeescript', 'Coffeescript'),
+        ('c', 'C'),
+    )
+
+    lang = forms.MultipleChoiceField(choices=LANGUAGE_CHOICES)
+
     boolean_field = forms.NullBooleanField()
     float_field = forms.FloatField()
     name_sender = forms.CharField(max_length=100, label="Введите ваше имя")
